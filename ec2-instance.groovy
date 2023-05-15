@@ -1,3 +1,4 @@
+/*requires init stage validators - credentials from validators.groovy*/
 stages {
         stage('Init') {
             steps {
@@ -6,7 +7,7 @@ stages {
                     validators.init(params.job)
                     validators.environmentName(params.env_name)
 
-
+/*for every important value for variable is taken from seperate file*/
 stage('Create Server') {
             steps {
                 script {
@@ -27,4 +28,3 @@ def subnet_options = [
     'private-use1-az2',
 
 
-    
